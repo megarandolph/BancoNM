@@ -26,5 +26,11 @@ namespace BancoNM.Controllers
 
             return View();
         }
+
+        public ActionResult CrearClientes()
+        {
+            //private Nacionalidad db = new Nacionalidad();
+            return View();
+        }
     }
 }

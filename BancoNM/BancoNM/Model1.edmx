@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BancoNMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BancoNMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cargos">
           <Key>
             <PropertyRef Name="idCargo" />
@@ -131,7 +131,16 @@
           <Property Name="montoMin" Type="money" />
           <Property Name="fechaA" Type="date" />
         </EntityType>
-        <Association Name="FK__Clientes__idNaci__108B795B">
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="40" />
+          <Property Name="pass" Type="varchar" MaxLength="40" />
+          <Property Name="acceso" Type="int" />
+        </EntityType>
+        <Association Name="FK__Clientes__idNaci__4CA06362">
           <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="0..1" />
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,7 +152,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CreditoCA__numCu__24927208">
+        <Association Name="FK__CreditoCA__numCu__4D94879B">
           <End Role="CuentaA" Type="Self.CuentaA" Multiplicity="0..1" />
           <End Role="CreditoCA" Type="Self.CreditoCA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -155,7 +164,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CuentaA__idClien__1ED998B2">
+        <Association Name="FK__CuentaA__idClien__4E88ABD4">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
           <End Role="CuentaA" Type="Self.CuentaA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -167,7 +176,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CuentaA__idMoned__1FCDBCEB">
+        <Association Name="FK__CuentaA__idMoned__4F7CD00D">
           <End Role="Monedas" Type="Self.Monedas" Multiplicity="0..1" />
           <End Role="CuentaA" Type="Self.CuentaA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -179,7 +188,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DebitoCA__numCue__29572725">
+        <Association Name="FK__DebitoCA__numCue__5070F446">
           <End Role="CuentaA" Type="Self.CuentaA" Multiplicity="0..1" />
           <End Role="DebitoCA" Type="Self.DebitoCA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -191,7 +200,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleado__idCarg__2E1BDC42">
+        <Association Name="FK__Empleado__idCarg__5165187F">
           <End Role="Cargos" Type="Self.Cargos" Multiplicity="0..1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -203,7 +212,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleado__idDepa__2F10007B">
+        <Association Name="FK__Empleado__idDepa__52593CB8">
           <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -215,7 +224,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleado__idNaci__300424B4">
+        <Association Name="FK__Empleado__idNaci__534D60F1">
           <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="0..1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -227,7 +236,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PagoPrest__idCli__35BCFE0A">
+        <Association Name="FK__PagoPrest__idCli__5441852A">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
           <End Role="PagoPrestamos" Type="Self.PagoPrestamos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -239,7 +248,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PagoPrest__idPre__34C8D9D1">
+        <Association Name="FK__PagoPrest__idPre__5535A963">
           <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="0..1" />
           <End Role="PagoPrestamos" Type="Self.PagoPrestamos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -251,7 +260,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Prestamos__idCli__15502E78">
+        <Association Name="FK__Prestamos__idCli__5629CD9C">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
           <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -263,7 +272,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Solicitud__idCli__1A14E395">
+        <Association Name="FK__Solicitud__idCli__571DF1D5">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
           <End Role="SolicitudCA" Type="Self.SolicitudCA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -288,57 +297,57 @@
           <EntitySet Name="PagoPrestamos" EntityType="Self.PagoPrestamos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SolicitudCA" EntityType="Self.SolicitudCA" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Clientes__idNaci__108B795B" Association="Self.FK__Clientes__idNaci__108B795B">
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Clientes__idNaci__4CA06362" Association="Self.FK__Clientes__idNaci__4CA06362">
             <End Role="Nacionalidad" EntitySet="Nacionalidad" />
             <End Role="Clientes" EntitySet="Clientes" />
           </AssociationSet>
-          <AssociationSet Name="FK__CreditoCA__numCu__24927208" Association="Self.FK__CreditoCA__numCu__24927208">
+          <AssociationSet Name="FK__CreditoCA__numCu__4D94879B" Association="Self.FK__CreditoCA__numCu__4D94879B">
             <End Role="CuentaA" EntitySet="CuentaA" />
             <End Role="CreditoCA" EntitySet="CreditoCA" />
           </AssociationSet>
-          <AssociationSet Name="FK__CuentaA__idClien__1ED998B2" Association="Self.FK__CuentaA__idClien__1ED998B2">
+          <AssociationSet Name="FK__CuentaA__idClien__4E88ABD4" Association="Self.FK__CuentaA__idClien__4E88ABD4">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="CuentaA" EntitySet="CuentaA" />
           </AssociationSet>
-          <AssociationSet Name="FK__CuentaA__idMoned__1FCDBCEB" Association="Self.FK__CuentaA__idMoned__1FCDBCEB">
+          <AssociationSet Name="FK__CuentaA__idMoned__4F7CD00D" Association="Self.FK__CuentaA__idMoned__4F7CD00D">
             <End Role="Monedas" EntitySet="Monedas" />
             <End Role="CuentaA" EntitySet="CuentaA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DebitoCA__numCue__29572725" Association="Self.FK__DebitoCA__numCue__29572725">
+          <AssociationSet Name="FK__DebitoCA__numCue__5070F446" Association="Self.FK__DebitoCA__numCue__5070F446">
             <End Role="CuentaA" EntitySet="CuentaA" />
             <End Role="DebitoCA" EntitySet="DebitoCA" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleado__idCarg__2E1BDC42" Association="Self.FK__Empleado__idCarg__2E1BDC42">
+          <AssociationSet Name="FK__Empleado__idCarg__5165187F" Association="Self.FK__Empleado__idCarg__5165187F">
             <End Role="Cargos" EntitySet="Cargos" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleado__idDepa__2F10007B" Association="Self.FK__Empleado__idDepa__2F10007B">
+          <AssociationSet Name="FK__Empleado__idDepa__52593CB8" Association="Self.FK__Empleado__idDepa__52593CB8">
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleado__idNaci__300424B4" Association="Self.FK__Empleado__idNaci__300424B4">
+          <AssociationSet Name="FK__Empleado__idNaci__534D60F1" Association="Self.FK__Empleado__idNaci__534D60F1">
             <End Role="Nacionalidad" EntitySet="Nacionalidad" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__PagoPrest__idCli__35BCFE0A" Association="Self.FK__PagoPrest__idCli__35BCFE0A">
+          <AssociationSet Name="FK__PagoPrest__idCli__5441852A" Association="Self.FK__PagoPrest__idCli__5441852A">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="PagoPrestamos" EntitySet="PagoPrestamos" />
           </AssociationSet>
-          <AssociationSet Name="FK__PagoPrest__idPre__34C8D9D1" Association="Self.FK__PagoPrest__idPre__34C8D9D1">
+          <AssociationSet Name="FK__PagoPrest__idPre__5535A963" Association="Self.FK__PagoPrest__idPre__5535A963">
             <End Role="Prestamos" EntitySet="Prestamos" />
             <End Role="PagoPrestamos" EntitySet="PagoPrestamos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Prestamos__idCli__15502E78" Association="Self.FK__Prestamos__idCli__15502E78">
+          <AssociationSet Name="FK__Prestamos__idCli__5629CD9C" Association="Self.FK__Prestamos__idCli__5629CD9C">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Prestamos" EntitySet="Prestamos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Solicitud__idCli__1A14E395" Association="Self.FK__Solicitud__idCli__1A14E395">
+          <AssociationSet Name="FK__Solicitud__idCli__571DF1D5" Association="Self.FK__Solicitud__idCli__571DF1D5">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="SolicitudCA" EntitySet="SolicitudCA" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BancoNMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -697,7 +706,17 @@
             <End Role="Prestamos" EntitySet="Prestamos" />
             <End Role="PagoPrestamos" EntitySet="PagoPrestamos" />
           </AssociationSet>
+          <EntitySet Name="Usuarios" EntityType="BancoNMModel.Usuarios" />
         </EntityContainer>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="pass" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="acceso" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -839,6 +858,16 @@
                 <ScalarProperty Name="justiIngreM" ColumnName="justiIngreM" />
                 <ScalarProperty Name="montoMin" ColumnName="montoMin" />
                 <ScalarProperty Name="fechaA" ColumnName="fechaA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="BancoNMModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="acceso" ColumnName="acceso" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
