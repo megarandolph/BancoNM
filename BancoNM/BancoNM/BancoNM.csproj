@@ -134,8 +134,20 @@
     <Compile Include="Clientes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CreditoCAController.cs" />
+    <Compile Include="Controllers\CuentaAController.cs" />
+    <Compile Include="Controllers\DebitoCAController.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MonedasController.cs" />
+    <Compile Include="Controllers\NacionalidadController.cs" />
+    <Compile Include="Controllers\PagoPrestamosController.cs" />
+    <Compile Include="Controllers\PrestamosController.cs" />
+    <Compile Include="Controllers\SolicitudCAController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="CreditoCA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -249,6 +261,66 @@
     <Content Include="Views\Cliente\Details.cshtml" />
     <Content Include="Views\Cliente\Edit.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Empleado\Create.cshtml" />
+    <Content Include="Views\Empleado\Delete.cshtml" />
+    <Content Include="Views\Empleado\Details.cshtml" />
+    <Content Include="Views\Empleado\Edit.cshtml" />
+    <Content Include="Views\Empleado\Index.cshtml" />
+    <Content Include="Views\Cargo\Create.cshtml" />
+    <Content Include="Views\Cargo\Delete.cshtml" />
+    <Content Include="Views\Cargo\Details.cshtml" />
+    <Content Include="Views\Cargo\Edit.cshtml" />
+    <Content Include="Views\Cargo\Index.cshtml" />
+    <Content Include="Views\CreditoCA\Create.cshtml" />
+    <Content Include="Views\CreditoCA\Delete.cshtml" />
+    <Content Include="Views\CreditoCA\Details.cshtml" />
+    <Content Include="Views\CreditoCA\Edit.cshtml" />
+    <Content Include="Views\CreditoCA\Index.cshtml" />
+    <Content Include="Views\CuentaA\Create.cshtml" />
+    <Content Include="Views\CuentaA\Delete.cshtml" />
+    <Content Include="Views\CuentaA\Details.cshtml" />
+    <Content Include="Views\CuentaA\Edit.cshtml" />
+    <Content Include="Views\CuentaA\Index.cshtml" />
+    <Content Include="Views\DebitoCA\Create.cshtml" />
+    <Content Include="Views\DebitoCA\Delete.cshtml" />
+    <Content Include="Views\DebitoCA\Details.cshtml" />
+    <Content Include="Views\DebitoCA\Edit.cshtml" />
+    <Content Include="Views\DebitoCA\Index.cshtml" />
+    <Content Include="Views\Departamentos\Create.cshtml" />
+    <Content Include="Views\Departamentos\Delete.cshtml" />
+    <Content Include="Views\Departamentos\Details.cshtml" />
+    <Content Include="Views\Departamentos\Edit.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Monedas\Create.cshtml" />
+    <Content Include="Views\Monedas\Delete.cshtml" />
+    <Content Include="Views\Monedas\Details.cshtml" />
+    <Content Include="Views\Monedas\Edit.cshtml" />
+    <Content Include="Views\Monedas\Index.cshtml" />
+    <Content Include="Views\Nacionalidad\Create.cshtml" />
+    <Content Include="Views\Nacionalidad\Delete.cshtml" />
+    <Content Include="Views\Nacionalidad\Details.cshtml" />
+    <Content Include="Views\Nacionalidad\Edit.cshtml" />
+    <Content Include="Views\Nacionalidad\Index.cshtml" />
+    <Content Include="Views\PagoPrestamos\Create.cshtml" />
+    <Content Include="Views\PagoPrestamos\Delete.cshtml" />
+    <Content Include="Views\PagoPrestamos\Details.cshtml" />
+    <Content Include="Views\PagoPrestamos\Edit.cshtml" />
+    <Content Include="Views\PagoPrestamos\Index.cshtml" />
+    <Content Include="Views\Prestamos\Create.cshtml" />
+    <Content Include="Views\Prestamos\Delete.cshtml" />
+    <Content Include="Views\Prestamos\Details.cshtml" />
+    <Content Include="Views\Prestamos\Edit.cshtml" />
+    <Content Include="Views\Prestamos\Index.cshtml" />
+    <Content Include="Views\SolicitudCA\Create.cshtml" />
+    <Content Include="Views\SolicitudCA\Delete.cshtml" />
+    <Content Include="Views\SolicitudCA\Details.cshtml" />
+    <Content Include="Views\SolicitudCA\Edit.cshtml" />
+    <Content Include="Views\SolicitudCA\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
